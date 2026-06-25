@@ -19,7 +19,7 @@ const REPO_NAME = "antonioblog.github.io"; // ← pon aquí el nombre exacto del
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: `/${REPO_NAME}/`,
+  base: "/",
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
