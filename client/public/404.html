@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Antonio Encinas Camacho</title>
+    <script>
+      // SPA redirect para GitHub Pages
+      // Convierte la ruta actual en un parámetro de query y redirige al index.html
+      // para que el router de React pueda manejarla correctamente.
+      (function () {
+        var l = window.location;
+        var segmentCount = 1; // número de segmentos del base path (nombre del repo)
+        var path = l.pathname
+          .slice(1)
+          .split("/")
+          .slice(segmentCount)
+          .join("/");
+        var query = l.search.slice(1);
+        var hash = l.hash.slice(1);
+        var redirect =
+          l.protocol +
+          "//" +
+          l.hostname +
+          (l.port ? ":" + l.port : "") +
+          l.pathname
+            .split("/")
+            .slice(0, 1 + segmentCount)
+            .join("/") +
+          "/?p=/" +
+          path +
+          (query ? "&q=" + query : "") +
+          (hash ? "&h=" + hash : "");
+        l.replace(redirect);
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

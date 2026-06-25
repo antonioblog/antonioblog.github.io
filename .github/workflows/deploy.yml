@@ -1,0 +1,72 @@
+# .github/workflows/deploy.yml
+# Despliega automáticamente el sitio en GitHub Pages
+# cada vez que se hace un push a la rama main (o master).
+
+name: Desplegar en GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  # Permite ejecutar el workflow manualmente desde la pestaña Actions
+  workflow_dispatch:
+
+# Permisos necesarios para publicar en GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Evita despliegues simultáneos
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # 1. Descargar el código
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Instalar pnpm
+      - name: Instalar pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      # 3. Instalar Node.js
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+
+      # 4. Instalar dependencias
+      - name: Instalar dependencias
+        run: pnpm install --frozen-lockfile
+
+      # 5. Construir el sitio para GitHub Pages
+      - name: Build para GitHub Pages
+        run: pnpm build:github
+
+      # 6. Configurar GitHub Pages
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # 7. Subir el artefacto de build
+      - name: Subir artefacto
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "./dist/github-pages"
+
+      # 8. Desplegar en GitHub Pages
+      - name: Desplegar en GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
