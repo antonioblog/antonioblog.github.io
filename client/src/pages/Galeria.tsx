@@ -27,8 +27,8 @@ const ETAPA_COLORS: Record<string, string> = {
 const photos: Photo[] = [
   {
     id: 1,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-alevin-iBse35qJo5YLCxB37X3bbR.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-alevin-FjsXpwLcNcFjksytet9FNb.webp',
+    src:   '/images/',
+    thumb: '/images/',
     alt: 'Antonio en categoría alevín',
     temporada: '16/17 – 17/18',
     etapa: 'base',

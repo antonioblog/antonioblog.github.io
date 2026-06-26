@@ -6,10 +6,10 @@ import { ArrowRight, Flame, Target, Users, Shield } from 'lucide-react';
 import { careerStats, valores, seasons } from '@/lib/seasonData';
 import { useScrollReveal, useCountUp } from '@/hooks/useScrollReveal';
 
-const HERO_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-hero-bg-VjfVos9W23TCVHrXmCTk8k.webp';
-const ACTION_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-ball-action-ZBiMY2K5B3Aya2im3tefxR.webp';
-const SIERRA_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-sierra-nevada-GpgbwazqSoYYKzuDgSNX64.webp';
-const FIELD_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-field-texture-gFfCTZ25nvsTJcok7PyKFB.webp';
+const HERO_BG = '/images/antonio-hero-bg.webp';
+const ACTION_IMG = '/images/antonio-ball-action.webp';
+const SIERRA_IMG = '/images/antonio-sierra-nevada.webp';
+const FIELD_BG = '/images/antonio-field-texture.webp';
 
 const valorIcons = [Flame, Target, Users, Shield];
 
