@@ -38,14 +38,12 @@ jobs:
       # 2. Instalar pnpm
       - name: Instalar pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10
 
       # 3. Instalar Node.js
       - name: Instalar Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "24"
           cache: "pnpm"
 
       # 4. Instalar dependencias
