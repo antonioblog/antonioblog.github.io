@@ -27,14 +27,85 @@ const ETAPA_COLORS: Record<string, string> = {
 const photos: Photo[] = [
   {
     id: 1,
-    src:   '/images/',
-    thumb: '/images/',
+    src:   '/images/base-alevin-infantil/alevin2-1.webp',
+    thumb: '/images/base-alevin-infantil/alevin2-1.webp',
     alt: 'Antonio en categoría alevín',
     temporada: '16/17 – 17/18',
     etapa: 'base',
     etapaLabel: 'Alevín',
     caption: 'Los primeros pasos en el Ogíjares 89. Aquí empezó todo.',
   },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil2-5.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-5.webp',
+    alt: 'Antonio en categoría alevín',
+    temporada: '16/17 – 17/18',
+    etapa: 'base',
+    etapaLabel: 'Alevín',
+    caption: 'Los primeros pasos en el Ogíjares 89. Aquí empezó todo.',
+  },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil1-2.webp',
+    thumb: '/images/base-alevin-infantil/infantil1-2.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil1-3.webp',
+    thumb: '/images/base-alevin-infantil/infantil1-3.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil1-4.webp',
+    thumb: '/images/base-alevin-infantil/infantil1-4.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil1-5.webp',
+    thumb: '/images/base-alevin-infantil/infantil1-5.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 1,
+    src:   '/images/base-alevin-infantil/infantil2-1.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-1.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+
+
+
+
+
   {
     id: 2,
     src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-infantil-ijBzpXRuEVpCbrQpPcFzb4.png',
