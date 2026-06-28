@@ -2,7 +2,7 @@
 // Design: "Ascenso Imparable" — minimal dark footer with orange accent
 import { Link } from 'wouter';
 
-const LOGO_URL = '/images/logoAEC.png';
+const LOGO_URL = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-logo-K8adtAp4AoyNJ3J3BhwL22.png';
 
 export default function Footer() {
   return (

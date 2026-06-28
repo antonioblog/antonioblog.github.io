@@ -1,6 +1,6 @@
 // Galería de Fotos — Antonio Encinas Camacho
 // Design: "Ascenso Imparable" — editorial sports photo gallery with lightbox
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef } from 'react';
 import { X, ChevronLeft, ChevronRight, Camera, ZoomIn } from 'lucide-react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
@@ -37,7 +37,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 2,
     src:   '/images/base-alevin-infantil/infantil2-5.webp',
     thumb: '/images/base-alevin-infantil/infantil2-5.webp',
     alt: 'Antonio en categoría alevín',
@@ -48,7 +48,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 3,
     src:   '/images/base-alevin-infantil/infantil1-2.webp',
     thumb: '/images/base-alevin-infantil/infantil1-2.webp',
     alt: 'Antonio en categoría Infantil',
@@ -59,7 +59,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 4,
     src:   '/images/base-alevin-infantil/infantil1-3.webp',
     thumb: '/images/base-alevin-infantil/infantil1-3.webp',
     alt: 'Antonio en categoría Infantil',
@@ -70,7 +70,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 5,
     src:   '/images/base-alevin-infantil/infantil1-4.webp',
     thumb: '/images/base-alevin-infantil/infantil1-4.webp',
     alt: 'Antonio en categoría Infantil',
@@ -81,7 +81,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 6,
     src:   '/images/base-alevin-infantil/infantil1-5.webp',
     thumb: '/images/base-alevin-infantil/infantil1-5.webp',
     alt: 'Antonio en categoría Infantil',
@@ -92,7 +92,7 @@ const photos: Photo[] = [
   },
   
     {
-    id: 1,
+    id: 7,
     src:   '/images/base-alevin-infantil/infantil2-1.webp',
     thumb: '/images/base-alevin-infantil/infantil2-1.webp',
     alt: 'Antonio en categoría Infantil',
@@ -101,91 +101,1008 @@ const photos: Photo[] = [
     etapaLabel: 'Infantil',
     caption: 'La Nueva Etapa en Ogíjares 89.',
   },
-
-
-
-
-
-  {
-    id: 2,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-infantil-ijBzpXRuEVpCbrQpPcFzb4.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-infantil-FpBN9BLBs94DCCiSpuyDcv.webp',
-    alt: 'Celebración de gol en categoría infantil',
+  
+    {
+    id: 8,
+    src:   '/images/base-alevin-infantil/infantil2-3.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-3.webp',
+    alt: 'Antonio en categoría Infantil',
     temporada: '18/19 – 19/20',
     etapa: 'base',
     etapaLabel: 'Infantil',
-    caption: 'La alegría de marcar en categoría infantil. El gol siempre fue su objetivo.',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
   },
+  
+    {
+    id: 9,
+    src:   '/images/base-alevin-infantil/infantil2-4.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-4.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 10,
+    src:   '/images/base-alevin-infantil/infantil2-5.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-5.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 11,
+    src:   '/images/base-alevin-infantil/infantil2-7.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-7.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 12,
+    src:   '/images/base-alevin-infantil/infantil2-8a.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-8a.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 13,
+    src:   '/images/base-alevin-infantil/infantil2-12.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-12.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
   {
-    id: 3,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-team-DmjwoUHZXZ6RAc86dmRNXy.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-team-dW6vrur4gYQcbbqiYiQioy.webp',
-    alt: 'Foto de equipo',
+    id: 14,
+    src:   '/images/base-alevin-infantil/infantil2-13a.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-13a.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 15,
+    src:   '/images/base-alevin-infantil/infantil2-15a.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-15a.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 16,
+    src:   '/images/base-alevin-infantil/infantil2-17a.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-17a.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 17,
+    src:   '/images/base-alevin-infantil/infantil2-19.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-19.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 18,
+    src:   '/images/base-alevin-infantil/infantil2-21.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-21.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 19,
+    src:   '/images/base-alevin-infantil/infantil2-22.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-22.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 20,
+    src:   '/images/base-alevin-infantil/infantil2-24.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-24.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 21,
+    src:   '/images/base-alevin-infantil/infantil2-30.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-30.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 22,
+    src:   '/images/base-alevin-infantil/infantil2-32.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-32.webp',
+    alt: 'Viaje a Inglaterra',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje Increible.',
+  },
+  
+    {
+    id: 23,
+    src:   '/images/base-alevin-infantil/infantil2-33.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-33.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje a Inglaterra.',
+  },
+
+    {
+    id: 24,
+    src:   '/images/base-alevin-infantil/infantil2-35.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-35.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje a Inglaterra',
+  },
+  
+    {
+    id: 25,
+    src:   '/images/base-alevin-infantil/infantil2-36.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-36.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje a Inglaterra',
+  },
+  
+    {
+    id: 26,
+    src:   '/images/base-alevin-infantil/infantil2-37.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-37.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje a Inglaterra',
+  },
+  
+    {
+    id: 27,
+    src:   '/images/base-alevin-infantil/infantil2-51.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-51.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estadio del Manchester City',
+  },
+    
+    {
+    id: 28,
+    src:   '/images/base-alevin-infantil/infantil2-38.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-38.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Viaje a Inglaterra',
+  },
+  
+    {
+    id: 29,
+    src:   '/images/base-alevin-infantil/infantil2-39.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-39.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Partido en Inglaterra',
+  },
+  
+    {
+    id: 30,
+    src:   '/images/base-alevin-infantil/infantil2-43.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-43.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estado Inglés',
+  },
+  
+    {
+    id: 31,
+    src:   '/images/base-alevin-infantil/infantil2-44.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-44.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estadio del Liverpool',
+  },
+  
+    {
+    id: 32,
+    src:   '/images/base-alevin-infantil/infantil2-47.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-47.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estadio del Liverpool',
+  },
+  
+    {
+    id: 33,
+    src:   '/images/base-alevin-infantil/infantil2-49.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-49.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estadio del Manchester United',
+  },
+  
+    {
+    id: 34,
+    src:   '/images/base-alevin-infantil/infantil2-34.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-34.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Estadio del Manchester United.',
+  },
+  
+    {
+    id: 35,
+    src:   '/images/base-alevin-infantil/infantil2-40.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-40.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'Partido contre equipo Inglés.',
+  },
+  
+    {
+    id: 36,
+    src:   '/images/base-alevin-infantil/infantil2-52.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-52.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 37,
+    src:   '/images/base-alevin-infantil/infantil2-55.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-55.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 38,
+    src:   '/images/base-alevin-infantil/infantil2-56.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-56.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 39,
+    src:   '/images/base-alevin-infantil/infantil2-57.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-57.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 40,
+    src:   '/images/base-alevin-infantil/infantil2-60.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-60.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 41,
+    src:   '/images/base-alevin-infantil/infantil2-61.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-61.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 42,
+    src:   '/images/base-alevin-infantil/infantil2-62.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-62.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+    {
+    id: 43,
+    src:   '/images/base-alevin-infantil/infantil2-63.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-63.webp',
+    alt: 'Antonio en categoría Infantil',
+    temporada: '18/19 – 19/20',
+    etapa: 'base',
+    etapaLabel: 'Infantil',
+    caption: 'La Nueva Etapa en Ogíjares 89.',
+  },
+  
+  {
+    id: 44,
+    src:   '/images/cadete/cadete1-2.webp',
+    thumb: '/images/cadete/cadete1-2.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 27',
     temporada: '20/21',
-    etapa: 'equipo',
-    etapaLabel: 'Equipo',
-    caption: 'El equipo cadete del Ogíjares 89. Temporada de debut en Tercera Andaluza.',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'Temporada cadete 20/21.',
   },
+  
   {
-    id: 4,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-oWcVM6rGfgFUn2PvaMShrq.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-LyYMRihg3gniRmNcCUNEeC.webp',
+    id: 45,
+    src:   '/images/cadete/cadete1-3.webp',
+    thumb: '/images/cadete/cadete1-3.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 27',
+    temporada: '20/21',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'Temporada cadete 20/21.',
+  },
+  
+  {
+    id: 46,
+    src:   '/images/cadete/cadete1-1.webp',
+    thumb: '/images/cadete/cadete1-1.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 27',
+    temporada: '20/21',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'Temporada cadete 20/21.',
+  },
+  
+  {
+    id: 47,
+    src:   '/images/cadete/cadete2-1.webp',
+    thumb: '/images/cadete/cadete2-1.webp',
     alt: 'Antonio en categoría cadete con el dorsal 21',
     temporada: '21/22',
     etapa: 'cadete',
     etapaLabel: 'Cadete',
     caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
   },
+    
   {
-    id: 5,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-HvCtKqb377CXxVUCSS9GJB.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-DaZxaCU5tdHAyDUCyzfnSn.webp',
-    alt: 'Entrenamiento al atardecer',
-    temporada: 'Todos los años',
-    etapa: 'entrenamiento',
-    etapaLabel: 'Entrenamiento',
-    caption: '5 días de entrenamiento a la semana, temporada tras temporada. Sin excusas.',
+    id: 48,
+    src:   '/images/cadete/cadete2-2.webp',
+    thumb: '/images/cadete/cadete2-2.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
   },
+    
   {
-    id: 6,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-juvenil-Zq8Wi2UfJyzYzKek3Rw9Wf.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-juvenil-AL3zuBhkBkC8uQvV2aui6W.webp',
-    alt: 'Antonio en categoría juvenil con Sierra Nevada al fondo',
-    temporada: '22/23 – 24/25',
+    id: 49,
+    src:   '/images/cadete/cadete2-3.webp',
+    thumb: '/images/cadete/cadete2-3.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 50,
+    src:   '/images/cadete/cadete2-4.webp',
+    thumb: '/images/cadete/cadete2-4.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 51,
+    src:   '/images/cadete/cadete2-5.webp',
+    thumb: '/images/cadete/cadete2-5.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 52,
+    src:   '/images/cadete/cadete2-8.webp',
+    thumb: '/images/cadete/cadete2-8.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 53,
+    src:   '/images/cadete/cadete2-9.webp',
+    thumb: '/images/cadete/cadete2-9.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 54,
+    src:   '/images/cadete/cadete2-10.webp',
+    thumb: '/images/cadete/cadete2-10.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 55,
+    src:   '/images/cadete/cadete2-12.webp',
+    thumb: '/images/cadete/cadete2-12.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 56,
+    src:   '/images/cadete/cadete2-13.webp',
+    thumb: '/images/cadete/cadete2-13.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 57,
+    src:   '/images/cadete/cadete2-14.webp',
+    thumb: '/images/cadete/cadete2-14.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+    
+  {
+    id: 58,
+    src:   '/images/cadete/cadete2-15.webp',
+    thumb: '/images/cadete/cadete2-15.webp',
+    alt: 'Antonio en categoría cadete con el dorsal 21',
+    temporada: '21/22',
+    etapa: 'cadete',
+    etapaLabel: 'Cadete',
+    caption: 'El dorsal 21 llega para quedarse. Temporada cadete con 3 goles.',
+  },
+
+  {
+    id: 59,
+    src:   '/images/juvenil/juvenil1-1.webp',
+    thumb: '/images/juvenil/juvenil1-1.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
     etapa: 'juvenil',
     etapaLabel: 'Juvenil',
-    caption: 'Etapa juvenil con el C.F. Sierra Nevada-Cenes. Las montañas como testigo.',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
   },
+
   {
-    id: 7,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-goal-Gza97bEP46FmE735SXadKE.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-goal-6ZRs7PHg6CNCkKHdq7giLY.webp',
-    alt: 'Celebración de gol con el dorsal 21',
+    id: 60,
+    src:   '/images/juvenil/juvenil1-2.webp',
+    thumb: '/images/juvenil/juvenil1-2.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 61,
+    src:   '/images/juvenil/juvenil1-3.webp',
+    thumb: '/images/juvenil/juvenil1-3.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 62,
+    src:   '/images/juvenil/juvenil1-4.webp',
+    thumb: '/images/juvenil/juvenil1-4.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 63,
+    src:   '/images/juvenil/juvenil1-5.webp',
+    thumb: '/images/juvenil/juvenil1-5.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 64,
+    src:   '/images/juvenil/juvenil1-5.webp',
+    thumb: '/images/juvenil/juvenil1-5.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 65,
+    src:   '/images/juvenil/juvenil1-6.webp',
+    thumb: '/images/juvenil/juvenil1-6.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 66,
+    src:   '/images/juvenil/juvenil1-7.webp',
+    thumb: '/images/juvenil/juvenil1-7.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 67,
+    src:   '/images/juvenil/juvenil1-80.webp',
+    thumb: '/images/juvenil/juvenil1-80.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil primer año Ogijares 89.',  
+  },
+
+  {
+    id: 68,
+    src:   '/images/juvenil/juvenil2-1.webp',
+    thumb: '/images/juvenil/juvenil2-1.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 69,
+    src:   '/images/juvenil/juvenil2-2.webp',
+    thumb: '/images/juvenil/juvenil2-2.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 70,
+    src:   '/images/juvenil/juvenil2-3.webp',
+    thumb: '/images/juvenil/juvenil2-3.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 71,
+    src:   '/images/juvenil/juvenil2-5.webp',
+    thumb: '/images/juvenil/juvenil2-5.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 72,
+    src:   '/images/juvenil/juvenil2-9.webp',
+    thumb: '/images/juvenil/juvenil2-9.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 73,
+    src:   '/images/juvenil/juvenil2-10.webp',
+    thumb: '/images/juvenil/juvenil2-10.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 74,
+    src:   '/images/juvenil/juvenil2-11.webp',
+    thumb: '/images/juvenil/juvenil2-11.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 75,
+    src:   '/images/juvenil/juvenil2-12.webp',
+    thumb: '/images/juvenil/juvenil2-12.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 76,
+    src:   '/images/juvenil/juvenil2-14.webp',
+    thumb: '/images/juvenil/juvenil2-14.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 77,
+    src:   '/images/juvenil/juvenil2-21.webp',
+    thumb: '/images/juvenil/juvenil2-21.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 78,
+    src:   '/images/juvenil/juvenil2-28.webp',
+    thumb: '/images/juvenil/juvenil2-28.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 79,
+    src:   '/images/juvenil/juvenil2-29.webp',
+    thumb: '/images/juvenil/juvenil2-29.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Alhendín.',  
+  },
+
+  {
+    id: 80,
+    src:   '/images/juvenil/juvenil2-33.webp',
+    thumb: '/images/juvenil/juvenil2-33.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil segundo año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 81,
+    src:   '/images/juvenil/juvenil3-1.webp',
+    thumb: '/images/juvenil/juvenil3-1.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil Tercer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 82,
+    src:   '/images/juvenil/juvenil3-4.webp',
+    thumb: '/images/juvenil/juvenil3-4.webp',
+    alt: 'Antonio en categoría juvenil',
+    temporada: '22/23 – 23/24 - 24/25',
+    etapa: 'juvenil',
+    etapaLabel: 'Juvenil',
+    caption: 'Etapa juvenil Tercer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 83,
+    src:   '/images/senior/senior1-1.webp',
+    thumb: '/images/senior/senior1-1.webp',
+    alt: 'Antonio en categoría senior',
+    temporada: '25/26',
+    etapa: 'senior',
+    etapaLabel: 'Senior',
+    caption: 'Etapa senior primer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 84,
+    src:   '/images/senior/senior1-5.webp',
+    thumb: '/images/senior/senior1-5.webp',
+    alt: 'Antonio en categoría senior',
+    temporada: '25/26',
+    etapa: 'senior',
+    etapaLabel: 'Senior',
+    caption: 'Etapa senior primer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 85,
+    src:   '/images/senior/senior1-11.webp',
+    thumb: '/images/senior/senior1-11.webp',
+    alt: 'Antonio en categoría senior',
+    temporada: '25/26',
+    etapa: 'senior',
+    etapaLabel: 'Senior',
+    caption: 'Etapa senior primer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 86,
+    src:   '/images/senior/senior1-21.webp',
+    thumb: '/images/senior/senior1-21.webp',
+    alt: 'Antonio en categoría senior',
+    temporada: '25/26',
+    etapa: 'senior',
+    etapaLabel: 'Senior',
+    caption: 'Etapa senior primer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 87,
+    src:   '/images/senior/senior1-22.webp',
+    thumb: '/images/senior/senior1-22.webp',
+    alt: 'Antonio en categoría senior',
+    temporada: '25/26',
+    etapa: 'senior',
+    etapaLabel: 'Senior',
+    caption: 'Etapa senior primer año Sierra Nevada Cenes.',  
+  },
+
+  {
+    id: 88,
+    src:   '/images/base-alevin-infantil/alevin2-1.webp',
+    thumb: '/images/base-alevin-infantil/alevin2-1.webp',
+    alt: 'Foto de equipo',
+    temporada: '16/17 - 17/18',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo alevín del Ogíjares 89.',
+  },
+
+  {
+    id: 89,
+    src:   '/images/base-alevin-infantil/infantil1-1.webp',
+    thumb: '/images/base-alevin-infantil/infantil1-1.webp',
+    alt: 'Foto de equipo',
+    temporada: '18/19',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo infantil de primer año del Ogíjares 89.',
+  },
+
+  {
+    id: 90,
+    src:   '/images/base-alevin-infantil/infantil2-25.webp',
+    thumb: '/images/base-alevin-infantil/infantil2-25.webp',
+    alt: 'Foto de equipo',
+    temporada: '19/20',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo infantil de segundo año del Ogíjares 89.',
+  },
+
+  {
+    id: 91,
+    src:   '/images/cadete/cadete1-1.webp',
+    thumb: '/images/cadete/cadete1-1.webp',
+    alt: 'Foto de equipo',
+    temporada: '20/21',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo cadete de primer año del Ogíjares 89. Temporada de debut en Tercera Andaluza.',
+  },
+
+  {
+    id: 92,
+    src:   '/images/cadete/cadete2-16.webp',
+    thumb: '/images/cadete/cadete2-16.webp',
+    alt: 'Foto de equipo',
+    temporada: '21/22',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo cadete de segundo año del Ogíjares 89. Temporada de debut en Tercera Andaluza.',
+  },
+
+  {
+    id: 93,
+    src:   '/images/juvenil/juvenil1-8.webp',
+    thumb: '/images/juvenil/juvenil1-8.webp',
+    alt: 'Foto de equipo',
+    temporada: '22/23',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo juvenil de primer año del Ogíjares 89. Temporada de debut en Tercera Andaluza.',
+  },
+
+  {
+    id: 94,
+    src:   '/images/juvenil/juvenil2-4.webp',
+    thumb: '/images/juvenil/juvenil2-4.webp',
+    alt: 'Foto de equipo',
     temporada: '23/24',
-    etapa: 'juvenil',
-    etapaLabel: 'Juvenil',
-    caption: 'Uno de los 3 goles de la temporada 23/24. La perseverancia tiene recompensa.',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo juvenil de segundo año del Alhendin. Temporada de debut en Segunda Andaluza.',
   },
+
   {
-    id: 8,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-portrait-eymvvB8P5kTRdpM7fkTL4F.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-portrait-EB2r7sWU6PqRtVPthkvMGL.webp',
-    alt: 'Retrato de Antonio con el dorsal 21',
-    temporada: '25/26',
-    etapa: 'senior',
-    etapaLabel: 'Senior',
-    caption: 'Primera Andaluza Senior. El destino al que siempre apuntó.',
+    id: 95,
+    src:   '/images/juvenil/juvenil2-33.webp',
+    thumb: '/images/juvenil/juvenil2-33.webp',
+    alt: 'Foto de equipo',
+    temporada: '23/24',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en Segunda Andaluza.',
   },
+
   {
-    id: 9,
-    src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-senior-5Np5WKVpcfxRkrDkfsnKXY.png',
-    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-senior-HzK72Xm4rLHugn2AmixfN2.webp',
-    alt: 'Antonio en partido senior',
-    temporada: '25/26',
-    etapa: 'senior',
-    etapaLabel: 'Senior',
-    caption: 'Fútbol senior. El C.F. Sierra Nevada-Cenes volvió a contar con él. Merecido.',
+    id: 96,
+    src:   '/images/juvenil/juvenil3-3-.webp',
+    thumb: '/images/juvenil/juvenil3-3.webp',
+    alt: 'Foto de equipo',
+    temporada: '24/25',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en segunda andaluza.',
   },
+
+  {
+    id: 97,
+    src:   '/images/senior/senior1-34.webp',
+    thumb: '/images/senior/senior1-34.webp',
+    alt: 'Foto de equipo',
+    temporada: '25/26',
+    etapa: 'equipo',
+    etapaLabel: 'Equipo',
+    caption: 'El equipo senior del Sierra Nevada Cenes. Temporada de debut en primera andaluza.',
+  },
+
+//  {
+//    id: 11,
+ //   src:   'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-HvCtKqb377CXxVUCSS9GJB.png',
+//    thumb: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-DaZxaCU5tdHAyDUCyzfnSn.webp',
+//    alt: 'Entrenamiento al atardecer',
+//    temporada: 'Todos los años',
+//    etapa: 'entrenamiento',
+//    etapaLabel: 'Entrenamiento',
+//    caption: '5 días de entrenamiento a la semana, temporada tras temporada. Sin excusas.',
+//  },
+
 ];
 
 const FILTERS = [
@@ -202,6 +1119,19 @@ export default function Galeria() {
   useScrollReveal();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [lightbox, setLightbox] = useState<number | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  const handleFilterChange = useCallback((key: string) => {
+    setActiveFilter(key);
+    // Scroll suave al inicio del grid de fotos al cambiar filtro
+    setTimeout(() => {
+      if (gridRef.current) {
+        gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    }, 50);
+  }, []);
 
   const filtered = activeFilter === 'all'
     ? photos
@@ -271,7 +1201,7 @@ export default function Galeria() {
             {FILTERS.map(f => (
               <button
                 key={f.key}
-                onClick={() => setActiveFilter(f.key)}
+                onClick={() => handleFilterChange(f.key)}
                 className="shrink-0 font-display text-xs tracking-wider uppercase px-4 py-2 transition-all duration-200 active:scale-[0.97]"
                 style={
                   activeFilter === f.key
@@ -295,7 +1225,7 @@ export default function Galeria() {
       </section>
 
       {/* ── PHOTO GRID ── */}
-      <section className="py-12">
+      <section className="py-12" ref={gridRef}>
         <div className="container">
           {filtered.length === 0 ? (
             <div className="text-center py-24">

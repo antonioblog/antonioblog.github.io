@@ -52,7 +52,7 @@ export default function Sobre() {
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-25"
+          className="absolute inset-0 bg-cover bg-center opacity-45"
           style={{ backgroundImage: `url(${ACTION_IMG})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.08_0.01_260/0.7)] to-[oklch(0.08_0.01_260)]" />

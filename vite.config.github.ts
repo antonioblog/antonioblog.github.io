@@ -14,12 +14,12 @@ import path from "node:path";
 import { defineConfig } from "vite";
 
 // ── CAMBIA ESTO por el nombre de tu repositorio de GitHub ──────────────────
-const REPO_NAME = "antonioblog.github.io"; // ← pon aquí el nombre exacto del repo
+const REPO_NAME = "antonio-encinas"; // ← pon aquí el nombre exacto del repo
 // ──────────────────────────────────────────────────────────────────────────
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: `/`,
+  base: `/${REPO_NAME}/`,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

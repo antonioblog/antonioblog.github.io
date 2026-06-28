@@ -7,6 +7,7 @@ import { Route, Switch } from "wouter";
 import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Navbar from "./components/Navbar";
+import ScrollToTopButton from './components/ScrollToTopButton';
 import { useScrollToTop } from './hooks/useScrollToTop';
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -40,6 +41,7 @@ function Layout() {
       <Navbar />
       <Router />
       <Footer />
+      <ScrollToTopButton />
     </>
   );
 }

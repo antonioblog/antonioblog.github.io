@@ -415,7 +415,7 @@ export default function Home() {
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: `url(${SIERRA_IMG})` }}
         />
-        <div className="absolute inset-0 bg-[oklch(0.08_0.01_260/0.85)]" />
+        <div className="absolute inset-0 bg-[oklch(0.08_0.01_260/0.65)]" />
         {/* Diagonal orange overlay strip */}
         <div
           className="absolute top-0 left-0 right-0 h-1"

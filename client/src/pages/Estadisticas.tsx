@@ -76,7 +76,7 @@ export default function Estadisticas() {
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-15"
+          className="absolute inset-0 bg-cover bg-center opacity-40"
           style={{ backgroundImage: `url(${FIELD_BG})` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.08_0.01_260/0.5)] to-[oklch(0.08_0.01_260)]" />
