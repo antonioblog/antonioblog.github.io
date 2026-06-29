@@ -38,8 +38,6 @@ jobs:
       # 2. Instalar pnpm
       - name: Instalar pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 10.4.1
 
       # 3. Instalar Node.js
       - name: Instalar Node.js
