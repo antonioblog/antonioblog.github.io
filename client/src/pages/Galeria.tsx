@@ -352,7 +352,7 @@ const photos: Photo[] = [
     temporada: '18/19 – 19/20',
     etapa: 'base',
     etapaLabel: 'Infantil',
-    caption: 'Estado Inglés',
+    caption: 'Estadio Inglés',
   },
   
     {
@@ -1070,15 +1070,16 @@ const photos: Photo[] = [
     caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en Segunda Andaluza.',
   },
 
+
   {
     id: 96,
-    src:   '/images/juvenil/juvenil3-3-.webp',
+    src:   '/images/juvenil/juvenil3-3.webp',
     thumb: '/images/juvenil/juvenil3-3.webp',
     alt: 'Foto de equipo',
     temporada: '24/25',
     etapa: 'equipo',
     etapaLabel: 'Equipo',
-    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en segunda andaluza.',
+    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en Segunda Andaluza.',
   },
 
   {
