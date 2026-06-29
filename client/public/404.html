@@ -4,32 +4,43 @@
     <meta charset="UTF-8" />
     <title>Antonio Encinas Camacho</title>
     <script>
-      // SPA redirect para GitHub Pages
-      // Convierte la ruta actual en un parámetro de query y redirige al index.html
-      // para que el router de React pueda manejarla correctamente.
+      // SPA redirect para GitHub Pages — sin bucles infinitos
+      //
+      // segmentCount:
+      //   0 → user/org site (https://antonioblog.github.io/)
+      //   1 → project site  (https://antonioblog.github.io/antonio-encinas/)
+      //
+      // ⚠️ Debe coincidir con BASE_PATH en vite.config.github.ts
+      var segmentCount = 0; // ← 0 para user site | 1 para project site
+      // ─────────────────────────────────────────────────────────────────
+
       (function () {
         var l = window.location;
-        var segmentCount = 1; // número de segmentos del base path (nombre del repo)
-        var path = l.pathname
-          .slice(1)
-          .split("/")
-          .slice(segmentCount)
-          .join("/");
-        var query = l.search.slice(1);
-        var hash = l.hash.slice(1);
+
+        // Evitar bucle: si ya hay parámetro "p" en la URL, no hacer nada
+        if (l.search.indexOf('?p=') !== -1 || l.search.indexOf('&p=') !== -1) return;
+
+        var pathParts = l.pathname.split('/').filter(Boolean);
+        // Para segmentCount=0 (user site): toda la ruta es la ruta SPA
+        // Para segmentCount=1 (project site): el primer segmento es el repo
+        var routeParts = pathParts.slice(segmentCount);
+
+        // Si no hay ruta real, no redirigir
+        if (routeParts.length === 0) return;
+
+        var basePath = segmentCount > 0
+          ? '/' + pathParts.slice(0, segmentCount).join('/') + '/'
+          : '/';
+
+        var route = '/' + routeParts.join('/');
+        var hash = l.hash ? '&h=' + encodeURIComponent(l.hash.slice(1)) : '';
+
         var redirect =
-          l.protocol +
-          "//" +
-          l.hostname +
-          (l.port ? ":" + l.port : "") +
-          l.pathname
-            .split("/")
-            .slice(0, 1 + segmentCount)
-            .join("/") +
-          "/?p=/" +
-          path +
-          (query ? "&q=" + query : "") +
-          (hash ? "&h=" + hash : "");
+          l.protocol + '//' + l.hostname +
+          (l.port ? ':' + l.port : '') +
+          basePath +
+          '?p=' + encodeURIComponent(route) + hash;
+
         l.replace(redirect);
       })();
     </script>

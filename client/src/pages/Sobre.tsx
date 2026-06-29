@@ -52,10 +52,10 @@ export default function Sobre() {
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-20 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center opacity-45"
+          className="absolute inset-0 bg-cover bg-center opacity-65"
           style={{ backgroundImage: `url(${ACTION_IMG})` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.08_0.01_260/0.7)] to-[oklch(0.08_0.01_260)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[oklch(0.08_0.01_260/0.3)] to-[oklch(0.08_0.01_260)]" />
         <div className="container relative z-10">
           <div className="flex items-center gap-3 mb-4">
             <div className="h-px w-8 bg-[oklch(0.68_0.19_42)]" />
@@ -138,8 +138,8 @@ export default function Sobre() {
               <div className="relative">
                 <img
                   src={SIERRA_IMG}
-                  alt="Atleta mirando la Sierra Nevada"
-                  className="w-full h-[500px] object-cover"
+                  alt="Antonio Encinas Camacho"
+                  className="w-full h-[500px] object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[oklch(0.08_0.01_260/0.5)] to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-6">

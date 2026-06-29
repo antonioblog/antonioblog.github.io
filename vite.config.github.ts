@@ -2,24 +2,34 @@
 // Usa este archivo cuando hagas el build para GitHub Pages:
 //   pnpm build:github
 //
-// IMPORTANTE: Cambia el valor de BASE_PATH por el nombre de tu repositorio.
-// Ejemplo: si tu repo es https://github.com/usuario/antonio-encinas
-//          el BASE_PATH debe ser "/antonio-encinas/"
+// ── ELIGE UNO DE LOS DOS CASOS ────────────────────────────────────────────
 //
-// Si publicas en un dominio propio (usuario.github.io sin subruta), usa BASE_PATH = "/"
+// CASO A — User/Organization site (repo llamado "antonioblog.github.io"):
+//   Tu URL es: https://antonioblog.github.io/
+//   BASE_PATH = "/"
+//   segmentCount en 404.html = 0
+//
+// CASO B — Project site (repo con otro nombre, ej. "antonio-encinas"):
+//   Tu URL es: https://antonioblog.github.io/antonio-encinas/
+//   BASE_PATH = "/antonio-encinas/"
+//   segmentCount en 404.html = 1
+//
+// ─────────────────────────────────────────────────────────────────────────
+// Según tu URL https://antonioblog.github.io/ → CASO A → BASE_PATH = "/"
+// ─────────────────────────────────────────────────────────────────────────
 
 import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
 import path from "node:path";
 import { defineConfig } from "vite";
 
-// ── CAMBIA ESTO por el nombre de tu repositorio de GitHub ──────────────────
-const REPO_NAME = "antonioblog.github.io"; // ← pon aquí el nombre exacto del repo
-// ──────────────────────────────────────────────────────────────────────────
+// ── CAMBIA ESTO según tu caso (ver comentarios arriba) ────────────────────
+const BASE_PATH = "/"; // "/" para user site | "/nombre-repo/" para project site
+// ─────────────────────────────────────────────────────────────────────────
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: `/`,
+  base: BASE_PATH,
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),

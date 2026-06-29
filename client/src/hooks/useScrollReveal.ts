@@ -1,25 +1,37 @@
 import { useEffect, useRef } from 'react';
 
-export function useScrollReveal() {
+export function useScrollReveal(dep?: unknown) {
   const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-          }
-        });
-      },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
-    );
+    // Pequeño delay para que el DOM se actualice antes de observar
+    const timer = setTimeout(() => {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+            }
+          });
+        },
+        { threshold: 0.05, rootMargin: '0px 0px -20px 0px' }
+      );
 
-    const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
-    elements.forEach((el) => observer.observe(el));
+      const elements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+      elements.forEach((el) => {
+        // Si el elemento ya estaba visible (is-visible), no resetear
+        // Si es nuevo (sin is-visible), observarlo
+        if (!el.classList.contains('is-visible')) {
+          observer.observe(el);
+        }
+      });
 
-    return () => observer.disconnect();
-  }, []);
+      return () => observer.disconnect();
+    }, 80);
+
+    return () => clearTimeout(timer);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [dep]);
 
   return ref;
 }

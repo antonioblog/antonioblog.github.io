@@ -1116,20 +1116,18 @@ const FILTERS = [
 ];
 
 export default function Galeria() {
-  useScrollReveal();
   const [activeFilter, setActiveFilter] = useState<string>('all');
   const [lightbox, setLightbox] = useState<number | null>(null);
   const gridRef = useRef<HTMLDivElement>(null);
 
+  // Re-ejecutar el reveal cada vez que cambia el filtro para que las nuevas fotos sean visibles
+  useScrollReveal(activeFilter);
+
   const handleFilterChange = useCallback((key: string) => {
     setActiveFilter(key);
-    // Scroll suave al inicio del grid de fotos al cambiar filtro
+    // Scroll al inicio de la página al cambiar filtro (más fiable en móvil)
     setTimeout(() => {
-      if (gridRef.current) {
-        gridRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }, 50);
   }, []);
 
@@ -1237,9 +1235,8 @@ export default function Galeria() {
               {filtered.map((photo, i) => (
                 <div
                   key={photo.id}
-                  className="reveal break-inside-avoid group relative overflow-hidden cursor-pointer"
+                  className="break-inside-avoid group relative overflow-hidden cursor-pointer"
                   style={{
-                    transitionDelay: `${(i % 6) * 60}ms`,
                     clipPath: 'polygon(0 0, 100% 0, 100% 96%, 98% 100%, 0 100%)',
                   }}
                   onClick={() => openLightbox(photo.id)}
@@ -1247,7 +1244,7 @@ export default function Galeria() {
                   <img
                     src={photo.thumb}
                     alt={photo.alt}
-                    className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                    className="w-full h-auto object-cover object-top transition-transform duration-500 group-hover:scale-105"
                     loading="lazy"
                   />
                   {/* Overlay on hover */}

@@ -8,7 +8,7 @@ import { useScrollReveal, useCountUp } from '@/hooks/useScrollReveal';
 
 const HERO_BG = '/images/antonio-hero-bg.webp';
 const ACTION_IMG = '/images/antonio-ball-action.webp';
-const SIERRA_IMG = '/images/antonio-sierra-nevada.webp';
+const SIERRA_IMG = '/images/antonio-ball-action.webp';
 const FIELD_BG = '/images/antonio-field-texture.webp';
 
 const valorIcons = [Flame, Target, Users, Shield];
@@ -412,10 +412,10 @@ export default function Home() {
       {/* ── SIERRA NEVADA CTA ── */}
       <section className="relative py-32 overflow-hidden">
         <div
-          className="absolute inset-0 bg-cover bg-center"
+          className="absolute inset-0 bg-cover bg-top"
           style={{ backgroundImage: `url(${SIERRA_IMG})` }}
         />
-        <div className="absolute inset-0 bg-[oklch(0.08_0.01_260/0.65)]" />
+        <div className="absolute inset-0 bg-[oklch(0.08_0.01_260/0.55)]" />
         {/* Diagonal orange overlay strip */}
         <div
           className="absolute top-0 left-0 right-0 h-1"
