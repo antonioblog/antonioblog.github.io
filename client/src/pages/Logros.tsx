@@ -3,7 +3,7 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Trophy, TrendingUp, Star, Zap, ArrowUpRight } from 'lucide-react';
 
-const HERO_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-hero-bg-VjfVos9W23TCVHrXmCTk8k.webp';
+const HERO_BG = '/images/antonio-hero-bg.webp';
 
 const logros = [
   {

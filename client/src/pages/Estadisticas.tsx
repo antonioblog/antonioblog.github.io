@@ -16,7 +16,7 @@ import {
   Cell,
 } from 'recharts';
 
-const FIELD_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-field-texture-gFfCTZ25nvsTJcok7PyKFB.webp';
+const FIELD_BG = '/images/antonio-field-texture.webp';
 
 // Exigencia competitiva estimada por etapa (1-10)
 const evolucionData = [

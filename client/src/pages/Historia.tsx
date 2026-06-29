@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { seasons } from '@/lib/seasonData';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 
-const FIELD_BG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-field-texture-gFfCTZ25nvsTJcok7PyKFB.webp';
+const FIELD_BG = '/images/antonio-field-texture.webp';
 
 const tipoLabels: Record<string, string> = {
   base: 'Fútbol Base',

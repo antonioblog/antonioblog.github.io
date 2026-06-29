@@ -3,8 +3,8 @@
 import { useScrollReveal } from '@/hooks/useScrollReveal';
 import { Flame, Target, Users, Shield, Calendar, MapPin, Hash } from 'lucide-react';
 
-const ACTION_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-ball-action-ZBiMY2K5B3Aya2im3tefxR.webp';
-const SIERRA_IMG = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/antonio-sierra-nevada-GpgbwazqSoYYKzuDgSNX64.webp';
+const ACTION_IMG = '/images/antonio-ball-action.webp';
+const SIERRA_IMG = '/images/retrato.webp';
 
 const perfil = [
   { icono: Calendar, label: 'Inicio', valor: 'Temporada 2016/17' },
