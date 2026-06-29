@@ -720,8 +720,8 @@ const photos: Photo[] = [
 
   {
     id: 64,
-    src:   '/images/juvenil/juvenil1-5.webp',
-    thumb: '/images/juvenil/juvenil1-5.webp',
+    src:   '/images/juvenil/juvenil1-9.webp',
+    thumb: '/images/juvenil/juvenil1-9.webp',
     alt: 'Antonio en categoría juvenil',
     temporada: '22/23 – 23/24 - 24/25',
     etapa: 'juvenil',
