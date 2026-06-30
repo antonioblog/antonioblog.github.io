@@ -352,7 +352,7 @@ const photos: Photo[] = [
     temporada: '18/19 – 19/20',
     etapa: 'base',
     etapaLabel: 'Infantil',
-    caption: 'Estadio Inglés',
+    caption: 'Estado Inglés',
   },
   
     {
@@ -720,8 +720,8 @@ const photos: Photo[] = [
 
   {
     id: 64,
-    src:   '/images/juvenil/juvenil1-9.webp',
-    thumb: '/images/juvenil/juvenil1-9.webp',
+    src:   '/images/juvenil/juvenil1-5.webp',
+    thumb: '/images/juvenil/juvenil1-5.webp',
     alt: 'Antonio en categoría juvenil',
     temporada: '22/23 – 23/24 - 24/25',
     etapa: 'juvenil',
@@ -1070,16 +1070,15 @@ const photos: Photo[] = [
     caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en Segunda Andaluza.',
   },
 
-
   {
     id: 96,
-    src:   '/images/juvenil/juvenil3-3.webp',
+    src:   '/images/juvenil/juvenil3-3-.webp',
     thumb: '/images/juvenil/juvenil3-3.webp',
     alt: 'Foto de equipo',
     temporada: '24/25',
     etapa: 'equipo',
     etapaLabel: 'Equipo',
-    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en Segunda Andaluza.',
+    caption: 'El equipo juvenil del Sierra Nevada Cenes. Temporada de debut en segunda andaluza.',
   },
 
   {
@@ -1301,13 +1300,13 @@ export default function Galeria() {
       >
         <div className="container text-center">
           <Camera size={36} className="mx-auto mb-4" style={{ color: 'oklch(0.68 0.19 42)' }} />
-          <h3 className="font-display font-bold text-white text-2xl mb-2">
+{/*          <h3 className="font-display font-bold text-white text-2xl mb-2">
             ¿TIENES FOTOS DE ANTONIO?
-          </h3>
+          </h3>*
           <p className="font-body text-white/55 max-w-md mx-auto text-sm">
             Para añadir fotos reales, edita el archivo <code className="text-[oklch(0.68_0.19_42)] bg-white/5 px-1 py-0.5 rounded">client/src/pages/Galeria.tsx</code> y
             sustituye las URLs de las imágenes por las tuyas propias.
-          </p>
+          </p>*/}
         </div>
       </section>
 

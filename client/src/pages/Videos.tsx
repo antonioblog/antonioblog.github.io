@@ -34,90 +34,90 @@ const CAT_COLORS: Record<string, string> = {
 // Para el thumbnail: usa la URL de una imagen propia o déjala como está (placeholder)
 // ────────────────────────────────────────────────────────────────────────────
 const videos: VideoItem[] = [
-  {
-    id: 1,
-    title: 'Gol en Tercera Andaluza — Temporada 20/21',
-    description: 'Primer gol documentado en Tercera Andaluza. Cadete de primer año con el dorsal 27. El inicio de una racha goleadora.',
-    temporada: '20/21',
-    categoria: 'gol',
-    categoriaLabel: 'Gol',
-    duracion: '0:45',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-LyYMRihg3gniRmNcCUNEeC.webp',
-    destacado: true,
-  },
-  {
-    id: 2,
-    title: 'Jugada destacada — Cadete 2.º año',
-    description: 'Regates y conducción en la temporada cadete con el dorsal 21. La técnica que se fue puliendo partido a partido.',
-    temporada: '21/22',
-    categoria: 'jugada',
-    categoriaLabel: 'Jugada',
-    duracion: '1:12',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-oWcVM6rGfgFUn2PvaMShrq.png',
-  },
-  {
-    id: 3,
-    title: 'Resumen temporada Juvenil 1.º año',
-    description: 'Una temporada exigente jugando en tres competiciones: Tercera, Cuarta y Segunda Andaluza. 5 entrenamientos semanales, 2-3 partidos por fin de semana.',
-    temporada: '22/23',
-    categoria: 'resumen',
-    categoriaLabel: 'Resumen',
-    duracion: '3:20',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-juvenil-Zq8Wi2UfJyzYzKek3Rw9Wf.png',
-    destacado: true,
-  },
-  {
-    id: 4,
-    title: 'Gol con el C.F. Sierra Nevada-Cenes',
-    description: 'Uno de los 3 goles marcados en la temporada 23/24. Después de cambiar de club dos veces, Antonio respondió dentro del campo.',
-    temporada: '23/24',
-    categoria: 'gol',
-    categoriaLabel: 'Gol',
-    duracion: '0:38',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-goal-6ZRs7PHg6CNCkKHdq7giLY.webp',
-  },
-  {
-    id: 5,
-    title: 'Entrenamiento individual — Preparación física',
-    description: 'La disciplina que nadie ve. Trabajo individual fuera de los entrenamientos colectivos. La base de todo lo que consigue en los partidos.',
-    temporada: 'Todos los años',
-    categoria: 'entrenamiento',
-    categoriaLabel: 'Entrenamiento',
-    duracion: '2:05',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-DaZxaCU5tdHAyDUCyzfnSn.webp',
-  },
-  {
-    id: 6,
-    title: 'Partido de Segunda Andaluza — Juvenil 3.º año',
-    description: 'Temporada 24/25 tras el ascenso. Antonio compagina el equipo juvenil con el senior en Segunda Andaluza, demostrando que ya tiene nivel para competir entre adultos.',
-    temporada: '24/25',
-    categoria: 'partido',
-    categoriaLabel: 'Partido',
-    duracion: '4:15',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-senior-HzK72Xm4rLHugn2AmixfN2.webp',
-    destacado: true,
-  },
-  {
-    id: 7,
-    title: 'Debut en Primera Andaluza Senior',
-    description: 'El C.F. Sierra Nevada-Cenes vuelve a ficharle a mitad de temporada para disputar la Primera Andaluza Senior. El reconocimiento que llegó.',
-    temporada: '25/26',
-    categoria: 'partido',
-    categoriaLabel: 'Partido',
-    duracion: '5:30',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-portrait-EB2r7sWU6PqRtVPthkvMGL.webp',
-    destacado: true,
-  },
-  {
-    id: 8,
-    title: 'Foto de equipo — Ogíjares 89',
-    description: 'El equipo que lo vio crecer. El Ogíjares 89 fue el hogar de Antonio durante sus primeras seis temporadas.',
-    temporada: '16/17 – 21/22',
-    categoria: 'resumen',
-    categoriaLabel: 'Resumen',
-    duracion: '1:45',
-    thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-team-dW6vrur4gYQcbbqiYiQioy.webp',
-  },
+//   {
+//     id: 1,
+//     title: 'Gol en Tercera Andaluza — Temporada 20/21',
+//     description: 'Primer gol documentado en Tercera Andaluza. Cadete de primer año con el dorsal 27. El inicio de una racha goleadora.',
+//     temporada: '20/21',
+//     categoria: 'gol',
+//     categoriaLabel: 'Gol',
+//     duracion: '0:45',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-LyYMRihg3gniRmNcCUNEeC.webp',
+//     destacado: true,
+//   },
+//   {
+//     id: 2,
+//     title: 'Jugada destacada — Cadete 2.º año',
+//     description: 'Regates y conducción en la temporada cadete con el dorsal 21. La técnica que se fue puliendo partido a partido.',
+//     temporada: '21/22',
+//     categoria: 'jugada',
+//     categoriaLabel: 'Jugada',
+//     duracion: '1:12',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-cadete-oWcVM6rGfgFUn2PvaMShrq.png',
+//   },
+//   {
+//     id: 3,
+//     title: 'Resumen temporada Juvenil 1.º año',
+//     description: 'Una temporada exigente jugando en tres competiciones: Tercera, Cuarta y Segunda Andaluza. 5 entrenamientos semanales, 2-3 partidos por fin de semana.',
+//     temporada: '22/23',
+//     categoria: 'resumen',
+//     categoriaLabel: 'Resumen',
+//     duracion: '3:20',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-juvenil-Zq8Wi2UfJyzYzKek3Rw9Wf.png',
+//     destacado: true,
+//   },
+//   {
+//     id: 4,
+//     title: 'Gol con el C.F. Sierra Nevada-Cenes',
+//     description: 'Uno de los 3 goles marcados en la temporada 23/24. Después de cambiar de club dos veces, Antonio respondió dentro del campo.',
+//     temporada: '23/24',
+//     categoria: 'gol',
+//     categoriaLabel: 'Gol',
+//     duracion: '0:38',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-goal-6ZRs7PHg6CNCkKHdq7giLY.webp',
+//   },
+//   {
+//     id: 5,
+//     title: 'Entrenamiento individual — Preparación física',
+//     description: 'La disciplina que nadie ve. Trabajo individual fuera de los entrenamientos colectivos. La base de todo lo que consigue en los partidos.',
+//     temporada: 'Todos los años',
+//     categoria: 'entrenamiento',
+//     categoriaLabel: 'Entrenamiento',
+//     duracion: '2:05',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-training-DaZxaCU5tdHAyDUCyzfnSn.webp',
+//   },
+//   {
+//     id: 6,
+//     title: 'Partido de Segunda Andaluza — Juvenil 3.º año',
+//     description: 'Temporada 24/25 tras el ascenso. Antonio compagina el equipo juvenil con el senior en Segunda Andaluza, demostrando que ya tiene nivel para competir entre adultos.',
+//     temporada: '24/25',
+//     categoria: 'partido',
+//     categoriaLabel: 'Partido',
+//     duracion: '4:15',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-senior-HzK72Xm4rLHugn2AmixfN2.webp',
+//     destacado: true,
+//   },
+//   {
+//     id: 7,
+//     title: 'Debut en Primera Andaluza Senior',
+//     description: 'El C.F. Sierra Nevada-Cenes vuelve a ficharle a mitad de temporada para disputar la Primera Andaluza Senior. El reconocimiento que llegó.',
+//     temporada: '25/26',
+//     categoria: 'partido',
+//     categoriaLabel: 'Partido',
+//     duracion: '5:30',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-portrait-EB2r7sWU6PqRtVPthkvMGL.webp',
+//     destacado: true,
+//   },
+//   {
+//     id: 8,
+//     title: 'Foto de equipo — Ogíjares 89',
+//     description: 'El equipo que lo vio crecer. El Ogíjares 89 fue el hogar de Antonio durante sus primeras seis temporadas.',
+//     temporada: '16/17 – 21/22',
+//     categoria: 'resumen',
+//     categoriaLabel: 'Resumen',
+//     duracion: '1:45',
+//     thumbnail: 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030852881/Z23zqCqHXtDCHzorcyzFQi/gallery-team-dW6vrur4gYQcbbqiYiQioy.webp',
+//   },
 ];
 
 const FILTERS = [
@@ -193,9 +193,9 @@ function VideoModal({ video, onClose }: { video: VideoItem; onClose: () => void 
                 </div>
                 <p className="font-display font-bold text-white text-xl mb-2">VÍDEO PENDIENTE</p>
                 <p className="font-body text-white/55 text-sm max-w-sm">
-                  Para añadir este vídeo, edita <code className="text-[oklch(0.68_0.19_42)]">Videos.tsx</code> y
-                  añade el <code className="text-[oklch(0.68_0.19_42)]">youtubeId</code> o la <code className="text-[oklch(0.68_0.19_42)]">videoUrl</code> correspondiente.
-                </p>
+{/*                   Para añadir este vídeo, edita <code className="text-[oklch(0.68_0.19_42)]">Videos.tsx</code> y
+                   añade el <code className="text-[oklch(0.68_0.19_42)]">youtubeId</code> o la <code className="text-[oklch(0.68_0.19_42)]">videoUrl</code> correspondiente.*/}
+                 </p>
               </div>
             </div>
           )}
@@ -287,7 +287,7 @@ export default function Videos() {
             </div>
           </div>
           <p className="font-body text-white/55 max-w-xl mt-4 reveal">
-            Goles, jugadas y momentos clave de la trayectoria de Antonio. Añade los vídeos reales cuando los tengas disponibles.
+            Goles, jugadas y momentos clave de la trayectoria de Antonio. {/*Añade los vídeos reales cuando los tengas disponibles.*/}
           </p>
         </div>
       </section>
@@ -494,13 +494,13 @@ export default function Videos() {
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <Video size={20} style={{ color: 'oklch(0.68 0.19 42)' }} />
-                <h3 className="font-display font-bold text-white text-xl">CÓMO AÑADIR TUS VÍDEOS</h3>
+{/*                <h3 className="font-display font-bold text-white text-xl">CÓMO AÑADIR TUS VÍDEOS</h3>*/}
               </div>
-              <p className="font-body text-white/55 text-sm leading-relaxed">
+{/*              <p className="font-body text-white/55 text-sm leading-relaxed">
                 Edita <code className="text-[oklch(0.68_0.19_42)] bg-white/5 px-1 rounded">client/src/pages/Videos.tsx</code> y
                 para cada vídeo añade el <strong className="text-white">ID de YouTube</strong> en el campo <code className="text-[oklch(0.68_0.19_42)] bg-white/5 px-1 rounded">youtubeId</code>,
                 o la URL directa del archivo en <code className="text-[oklch(0.68_0.19_42)] bg-white/5 px-1 rounded">videoUrl</code>.
-              </p>
+              </p>*/}
             </div>
             <a
               href="https://www.youtube.com"
